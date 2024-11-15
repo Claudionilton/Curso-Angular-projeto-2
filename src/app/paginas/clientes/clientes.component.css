@@ -1,0 +1,25 @@
+#clientes table {
+    width: 100%;
+    font-size: 20px;
+    border-spacing: 0;
+}
+
+#clientes table th, #clientes table td {
+    border-bottom: 2px solid gray;
+    text-align: left;
+}
+
+#clientes table td {
+    padding: 10px 0;
+}
+
+#clientes table tr {
+    transition: 1s;
+}
+
+#clientes table tr:hover {
+    font-size: 25px;
+    font-weight: bold;
+    transition: 1s;
+    color: blueviolet;
+}
