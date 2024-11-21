@@ -1,0 +1,23 @@
+<div class="form">
+   <!-- <form>
+        <label for="login">Login</label>
+        <input type="text" id="login" name="login" [(ngModel)]="login" placeholder="Informe o seu login">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="pass">
+        <button (click)="confirmaLogin()">Enviar</button>
+    </form>-->
+  <!--  <form #fl="ngForm" (ngSubmit)="submitLogin(fl)">
+        <label for="login">Login</label>
+        <input type="text" id="login" name="login" [(ngModel)]="login" placeholder="Informe o seu login">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="pass">
+        <button>Enviar</button>
+    </form>-->
+    <form [formGroup]='loginForm' (ngSubmit)="submitLogin2()">
+        <label for="login">Login</label>
+        <input type="text" id="login" name="login" formControlName="login" placeholder="Informe o seu login">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" formControlName="pass">
+        <button>Enviar</button>
+    </form>
+</div>
