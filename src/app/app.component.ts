@@ -4,6 +4,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './paginas/home/home.component';
 import { ClientesComponent } from './paginas/clientes/clientes.component';
 import { OrcamentosComponent } from './paginas/orcamentos/orcamentos.component';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,8 @@ import { OrcamentosComponent } from './paginas/orcamentos/orcamentos.component';
 })
 export class AppComponent {
   title = 'projeto2';
+  ambiente = environment.nomeambiente
+  constructor(){
+    console.log(`Nome do ambiente ${this.ambiente}`);
+  }
 }
