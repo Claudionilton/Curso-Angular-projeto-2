@@ -21,17 +21,17 @@ export class ClienteService {
     let req = this.#http.get<Array<ICliente>>(url)
     let sub = {
       next(dados: Array<ICliente>) {
-        console.log(`next`,dados)
+        //console.log(`next`,dados)
         dados.forEach((el: ICliente) => {
           clientes.push({id: el.id, name: el.name, email: el.email})
         })
-        console.log('clientes :>> ', clientes);
+        //console.log('clientes :>> ', clientes);
       },
       error(err: any) {
         console.log(`error`, err)
       },
       complete() {
-        console.log(`Complete`)
+        //console.log(`Complete`)
       }
     }
 

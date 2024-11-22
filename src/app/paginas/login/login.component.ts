@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Valid
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
+  router = inject(Router);
   public login: string = ''
   public pass: string = ''
   public loginForm = new FormGroup ({
@@ -25,6 +26,10 @@ export class LoginComponent {
   }
 
   public submitLogin2():void {
-    console.log('Formulario', this.loginForm.value)
+    console.log('Formulario', this.loginForm.value);
+    if(typeof this.loginForm.value.login === 'string') {
+    window.sessionStorage.setItem('login', this.loginForm.value.login)
+    this.router.navigate([sessionStorage.getItem('url')])
+    }
   }
 }
